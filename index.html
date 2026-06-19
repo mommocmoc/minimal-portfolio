@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JaeHwan So · 소재환 — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#000000;
+    --white:#FFFFFF;
+    --blue:#0000FF;
+    --sunken:#F0F0F0;
+    --success:#008000;
+    --warning:#FFA500;
+    --error:#FF0000;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Work Sans",sans-serif;
+    background:var(--white);
+    color:var(--black);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  a{color:var(--blue)}
+
+  h1,h2,h3{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase}
+  h1{font-size:clamp(2.8rem,9vw,64px);line-height:1.0;letter-spacing:-.01em}
+  h2{font-size:clamp(2rem,6vw,48px);line-height:1.05}
+  h3{font-size:clamp(1.5rem,4vw,32px);line-height:1.1}
+
+  .mono{font-family:"Space Mono",monospace}
+
+  /* ---- HERO ---- */
+  header{padding:120px 0 64px;border-bottom:5px solid var(--black)}
+  .kicker{font-family:"Space Mono",monospace;font-size:13px;text-transform:uppercase;
+    letter-spacing:2px;margin-bottom:24px;border:3px solid var(--black);display:inline-block;
+    padding:6px 12px}
+  h1 .en{display:block;font-size:.36em;margin-top:14px;color:var(--black);-webkit-text-stroke:0}
+  .tagline{font-size:22px;font-weight:600;line-height:1.2;margin-top:40px;max-width:680px}
+  .sub{font-size:16px;margin-top:16px;max-width:640px}
+
+  .btnrow{margin-top:40px;display:flex;flex-wrap:wrap;gap:0}
+  .btn{font-family:"Work Sans",sans-serif;font-weight:600;text-transform:uppercase;
+    letter-spacing:2px;font-size:14px;padding:14px 28px;border:3px solid var(--black);
+    background:var(--black);color:var(--white);text-decoration:none;cursor:pointer;
+    transition:none;display:inline-block;margin-right:-3px}
+  .btn:hover{background:var(--white);color:var(--black)}
+  .btn.sec{background:var(--white);color:var(--black)}
+  .btn.sec:hover{background:var(--black);color:var(--white)}
+
+  /* ---- SECTIONS ---- */
+  section{padding:80px 0}
+  .sec-label{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:14px;
+    letter-spacing:2px;border-bottom:5px solid var(--black);padding-bottom:8px;margin-bottom:40px;
+    display:block}
+
+  /* ---- PROJECT CARDS ---- */
+  .card{background:var(--white);border:3px solid var(--black);padding:24px;margin-bottom:24px}
+  .card.elevated{border-width:5px}
+  .card .head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+    flex-wrap:wrap;border-bottom:3px solid var(--black);padding-bottom:16px}
+  .card .num{font-family:"Space Mono",monospace;font-size:15px;font-weight:700}
+  .card h3{margin-top:4px}
+  .card p{margin-top:16px;font-size:16px}
+
+  /* chips */
+  .chips{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-family:"Work Sans",sans-serif;font-size:10px;font-weight:600;text-transform:uppercase;
+    letter-spacing:1px;border:2px solid var(--black);padding:4px 12px;background:var(--white);color:var(--black)}
+  .status{font-family:"Work Sans",sans-serif;font-size:11px;font-weight:600;text-transform:uppercase;
+    letter-spacing:1px;padding:2px 10px;border:2px solid var(--black);background:var(--white)}
+  .status.success{color:var(--success);border-color:var(--success)}
+  .status.warning{color:var(--warning);border-color:var(--warning)}
+
+  .card-links{margin-top:24px;display:flex;flex-wrap:wrap;gap:0}
+  .card-links a{font-family:"Work Sans",sans-serif;font-weight:600;text-transform:uppercase;
+    letter-spacing:2px;font-size:13px;padding:10px 20px;border:3px solid var(--black);
+    background:var(--white);color:var(--black);text-decoration:none;margin-right:-3px;margin-bottom:0}
+  .card-links a:hover{background:var(--black);color:var(--white)}
+
+  /* ---- EXPERIENCE LIST ---- */
+  .exp{border-top:3px solid var(--black);padding:24px 0}
+  .exp:last-child{border-bottom:3px solid var(--black)}
+  .exp h3{font-size:clamp(1.2rem,3vw,24px)}
+  .exp .meta{font-family:"Space Mono",monospace;font-size:14px;margin-top:8px}
+  .exp p{margin-top:14px;max-width:760px}
+
+  /* ---- FOOTER ---- */
+  footer{background:var(--black);color:var(--white);padding:64px 0;margin-top:40px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
+  footer .big{font-family:"Archivo Black",sans-serif;text-transform:uppercase;font-size:24px}
+  footer a{color:var(--white);font-family:"Space Mono",monospace;font-size:14px;text-decoration:underline}
+  footer a:hover{color:var(--white);background:var(--white);color:var(--black)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <span class="kicker">Prototyper / LX Designer</span>
+    <h1>소재환
+      <span class="en">JaeHwan So</span>
+    </h1>
+    <p class="tagline">리서치를 프로토타입으로. 기술을 경험으로.</p>
+    <div class="btnrow">
+      <a class="btn" href="mailto:hey@cowcowwow.kr">HEY@COWCOWWOW.KR</a>
+      <a class="btn sec" href="https://github.com/mommocmoc" target="_blank" rel="noopener">GITHUB / MOMMOCMOC</a>
+    </div>
+  </header>
+
+  <section>
+    <span class="sec-label">Selected Projects</span>
+
+    <div class="card elevated">
+      <div class="head">
+        <div>
+          <span class="num">01</span>
+          <h3>AI 변환 카메라</h3>
+        </div>
+        <span class="status warning">Music · WIP</span>
+      </div>
+      <p>라즈베리파이 제로에 생성형 이미지 모델을 결합해, 눈앞의 장면을 다른 이미지 스타일로 실시간 변환하는 피지컬 기기. 새 모델이 나오면 곧바로 만들어 특성을 검증하는 작업 방식의 결과물입니다. 이미지를 텍스트 메타 정보로 변환해 실시간 음악(Lyria)과 협주하는 확장은 현재 빌드 중입니다.</p>
+      <div class="chips">
+        <span class="chip">Raspberry Pi Zero</span>
+        <span class="chip">Gemini Flash Image</span>
+        <span class="chip">Nano Banana 2</span>
+        <span class="chip">Claude Code</span>
+        <span class="chip">Antigravity</span>
+      </div>
+      <div class="card-links">
+        <a href="https://github.com/mommocmoc/nanobanana-cam" target="_blank" rel="noopener">View Repo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head">
+        <div>
+          <span class="num">02</span>
+          <h3>AI 뉴스 팟캐스트 자동 발행</h3>
+        </div>
+        <span class="status success">AI Agent</span>
+      </div>
+      <p>AI 뉴스·동향 데이터를 자동 수집해 매일 팟캐스트로 발행하는 에이전트 워크플로우. 토큰 비용을 효율화하기 위해 AI를 활용할 구간과 코드로 처리할 구간을 전략적으로 구분하고, Python 기반 미디어 인제스트 파이프라인을 구축했습니다.</p>
+      <div class="chips">
+        <span class="chip">Python</span>
+        <span class="chip">AI Agent Workflow</span>
+        <span class="chip">Media Ingest Pipeline</span>
+        <span class="chip">TTS</span>
+      </div>
+      <div class="card-links">
+        <a href="https://podcasts.apple.com/kr/podcast/supercow-ai-news-podcast/id1895550157" target="_blank" rel="noopener">Listen ↗</a>
+        <a href="https://github.com/mommocmoc/supercow-ai-news-podcast" target="_blank" rel="noopener">News Repo</a>
+        <a href="https://github.com/mommocmoc/my-ai-podcast-template" target="_blank" rel="noopener">Template</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="head">
+        <div>
+          <span class="num">03</span>
+          <h3>Teachable Arm</h3>
+        </div>
+        <span class="status success">EdTech · ML</span>
+      </div>
+      <p>중학생과 교사가 웹사이트에 접속해 마이크로비트만 연결하면 곧바로 머신러닝을 경험하는 AI STEAM 교육 키트. 구글 Teachable Machine을 활용해 이미지 분류 3종을 실시간 학습시키고, 그 결과로 마이크로비트·서보모터 로봇 팔을 제어합니다. 복잡한 ML 과정을 누구나 쓰는 시스템으로 감싼 사례입니다.</p>
+      <div class="chips">
+        <span class="chip">Teachable Machine</span>
+        <span class="chip">micro:bit</span>
+        <span class="chip">Servo Motor</span>
+        <span class="chip">Web Service</span>
+      </div>
+      <div class="card-links">
+        <a href="https://mommocmoc.github.io/teachable-arm/" target="_blank" rel="noopener">Live Demo ↗</a>
+        <a href="https://github.com/mommocmoc/teachable-arm" target="_blank" rel="noopener">View Repo</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+    <span class="sec-label">Experience / Case Studies</span>
+
+    <div class="exp">
+      <h3>'소소의 모험: 게임드라실을 구하자'</h3>
+      <div class="meta">SMILEGATE — IP 기반 진로 교육</div>
+      <p>직업을 '설명'받던 진로 교육을 하나의 IP 세계관으로 전환. 아이들은 죽어가는 게임 세계를 구하는 영웅이 되어 직접 게임 아이디어를 고도화하고 프로토타입까지 창작했습니다. 경험의 레이어를 바꿔 교육을 놀이로 만든 프로젝트.</p>
+    </div>
+
+    <div class="exp">
+      <h3>AI 챗봇 피드백 게임 개발 실습</h3>
+      <div class="meta">SMILEGATE — 멀티모달 챗봇 설계</div>
+      <p>학습자가 이미지·영상·텍스트 창작물을 제출하면 AI 챗봇이 맞춤 피드백을 제공. Custom GPTs로 프롬프트를 먼저 설계·검증한 뒤 유효한 것만 프로덕트에 반영해, 개발 리소스를 아끼면서 모델·프롬프트를 빠르게 검증했습니다.</p>
+    </div>
+
+    <div class="exp">
+      <h3>로우코드(Airtable) CMS · 백엔드 협업</h3>
+      <div class="meta">회사 프로젝트 (비공개)</div>
+      <p>개발 리소스가 부족한 상황에서 에어테이블로 CMS를 직접 설계, 약 10명의 제작자가 4개 시리즈·120여 종의 콘텐츠를 독립적으로 관리하게 했습니다. 백엔드 리드와 협업해 데이터 처리 구조를 설계하며, 단기 구축 비용과 장기 운영 비용의 균형이라는 인사이트를 얻었습니다.</p>
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="big">소재환 / JaeHwan So</span>
+    <span>
+      <a href="mailto:hey@cowcowwow.kr">hey@cowcowwow.kr</a>
+      &nbsp;&nbsp;/&nbsp;&nbsp;
+      <a href="https://github.com/mommocmoc" target="_blank" rel="noopener">github.com/mommocmoc</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
